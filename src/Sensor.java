@@ -48,7 +48,6 @@ public abstract class Sensor implements Runnable {
 
             System.out.println("[" + nombreHilo + "] " + nombre + " -> Valor: " + valor + " " + unidad + alertaStr);
 
-            // Esperar el periodo del sensor
             try {
                 Thread.sleep(periodoMs);
             } catch (InterruptedException e) {
@@ -61,11 +60,7 @@ public abstract class Sensor implements Runnable {
     public String informe() {
         double media = totalLecturasRealizadas > 0 ? sumaValores / totalLecturasRealizadas : 0;
 
-        return "Sensor " + nombre + " [" + unidad + "] " +
-                "-> Lectura: " + totalLecturasRealizadas +
-                ", Media: " + media +
-                ", Min: " + valorMinimoRegistrado +
-                ", Max: " + valorMaximoRegistrado +
-                ", Alertas: " + contadorAlertas;
+        return "Sensor " + nombre + " [" + unidad + "] " + "-> Lectura: " + totalLecturasRealizadas + ", Media: " + media +
+                ", Min: " + valorMinimoRegistrado + ", Max: " + valorMaximoRegistrado + ", Alertas: " + contadorAlertas;
     }
 }
