@@ -1,6 +1,6 @@
 public class Fase1_Secuencial {
     public static void main(String[] args) {
-        System.out.println("Inicio del invernadero secuencial (1 hilo)");
+        System.out.println("--- Inicio del invernadero secuencial (1 hilo) ---");
 
         Temperatura temp = new Temperatura();
         Humedad hum = new Humedad();
@@ -14,7 +14,6 @@ public class Fase1_Secuencial {
         luz.run();
         riego.run();
 
-        // Registrar tiempo de fin
         long tiempoFin = System.currentTimeMillis();
         long tiempoTotal = tiempoFin - tiempoInicio;
 
